@@ -1,0 +1,72 @@
+.main {
+  height: 100vh;
+  background-image: url(https://img29.rajce.idnes.cz/d2903/17/17668/17668500_529bf2f821c6aa7025502a3b9e376475/images/1556826232?ver=0);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  /* color: #9a8a7880; */
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+}
+.text {
+  text-align: center;
+  /* padding: 50%; */
+  padding: 20%;
+}
+.text span {
+  display: inline-block;
+  /* width: 100%; */
+  background-color: rgba(38, 38, 38, 0.314);
+  color: #fff;
+  padding: 20px;
+}
+.text h1 {
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+.text p {
+  margin: 0;
+  font-size: 20px;
+}
+.more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.more ul {
+  scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+  .text {
+    padding: 15%;
+  }
+
+  .text h1 {
+    font-size: 25px;
+  }
+
+  .text p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    padding-top: 30%;
+  }
+
+  .text h1 {
+    font-size: 20px;
+  }
+
+  .text p {
+    font-size: 16px;
+  }
+}
