@@ -62,8 +62,8 @@
   display: flex;
 }
 .about {
-  display: flex;
-  flex-direction: row;
+  display: inline-grid;
+  grid-template-columns: 50% 50%;
   margin: 5%;
   border: 1px #9a8a78 solid;
 }
@@ -73,6 +73,7 @@
   text-align: center;
 }
 .aboutText ul {
+  /* margin: auto; */
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -95,7 +96,7 @@
 }
 .about img {
   border: 1px #9a8a78 solid;
-  width: 50%;
+  width: 100%;
 }
 @media (max-width: 480px) {
   .text {
