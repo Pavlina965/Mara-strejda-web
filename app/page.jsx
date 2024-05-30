@@ -6,7 +6,7 @@ import ToggleButtons from './components/ToggleButton';
 import StandardImageList from './components/Pictures';
 import Navbar from './components/Navbar';
 
-export default function Home({ Component, pageProps }) {
+export default function Home() {
   return (
     <>
     {/* <Navbar /> */}
