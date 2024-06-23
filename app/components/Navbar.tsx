@@ -44,10 +44,10 @@ const Navbar: React.FC = () => {
     };
 
   const menuItems = [
-    { text: "Home", href: "/" },
-    { text: "About", href: "/about" },
-    { text: "Services", href: "/services" },
-    { text: "Contact", href: "/contact" },
+    { text: "Domů", href: "/" },
+    { text: "O nás", href: "/about" },
+    { text: "Služby", href: "/services" },
+    { text: "Kontakt", href: "/contact" },
   ];
 
   return (

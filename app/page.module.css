@@ -65,7 +65,7 @@
 .about {
   display: grid;
   grid-template-columns: 50% 50%;
-  margin: 5%;
+  margin: 0 5%;
   border: 1px #9a8a78 solid;
   padding: 0;
 }
@@ -101,7 +101,32 @@
   border: 1px #9a8a78 solid;
   width: 100%;
 }
+.icons {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 0;
+  margin: 0 5%;
+  padding: 0;
+}
+.icon {
+  padding: 45%;
+  border-top: 0px;
+  border-left: 1px #9a8a78 solid;
+}
+.icon:last-child {
+  border-right: 1px #9a8a78 solid;
+}
 @media (max-width: 480px) {
+  .icons {
+    display: none;
+  }
+  .about {
+    grid-template-columns: auto;
+    margin: 0;
+  }
+  .aboutText {
+    display: inline-block;
+  }
   .text {
     padding-top: 30%;
   }
