@@ -1,25 +1,20 @@
 /* components/Navbar.module.css */
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
   background-color: #333;
-  color: #fff;
 }
 
-.logo a {
-  color: #fff;
-  text-decoration: none;
+.logo {
+  flex-grow: 1;
   font-size: 1.5rem;
-  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
 .hamburger {
   display: none;
-  font-size: 2rem;
   cursor: pointer;
+  color: white;
 }
 
 .menu {
@@ -27,37 +22,27 @@
   gap: 1rem;
 }
 
-.menu a {
-  color: #fff;
-  text-decoration: none;
+.menu.open {
+  display: block;
 }
 
-.menu a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .hamburger {
     display: block;
   }
 
   .menu {
     display: none;
-    flex-direction: column;
-    gap: 0;
-    background-color: #333;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    text-align: center;
   }
+}
+.listItem:hover {
+  color: #9a8a78;
+}
 
-  .menu.open {
-    display: flex;
-  }
+.drawerListItem {
+  color: #fff;
+}
 
-  .menu a {
-    padding: 1rem 0;
-  }
+.drawerListItem:hover {
+  background-color: #9a8a78;
 }

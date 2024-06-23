@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column; */
-}
+  /* }
 .text {
   text-align: center;
   /* padding: 50%; */
@@ -20,10 +20,11 @@
 }
 .text span {
   display: inline-block;
-  /* width: 100%; */
+  width: 100%;
   background-color: rgba(38, 38, 38, 0.314);
   color: #fff;
   padding: 20px;
+  text-align: center;
 }
 .text h1 {
   font-size: 30px;
@@ -62,11 +63,13 @@
   display: flex;
 }
 .about {
-  display: inline-grid;
+  display: grid;
   grid-template-columns: 50% 50%;
   margin: 5%;
   border: 1px #9a8a78 solid;
+  padding: 0;
 }
+
 .aboutText {
   display: flex;
   flex-direction: column;
