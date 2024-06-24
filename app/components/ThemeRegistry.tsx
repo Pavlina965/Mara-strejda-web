@@ -44,7 +44,12 @@ const theme = createTheme({
 
 const cache = createCache({ key: "css", prepend: true });
 
-export default function ThemeRegistry({ children }) {
+export default function ThemeRegistry({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  // Your function implementation
   return (
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
