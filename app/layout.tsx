@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Navbar";
 import StickyFooter from "./components/StickyFooter";
@@ -14,7 +15,7 @@ export const viewport = {
   maximumScale: 1,
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
