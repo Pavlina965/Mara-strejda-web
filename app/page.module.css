@@ -42,6 +42,8 @@
 }
 .images ul {
   scrollbar-width: none;
+  width: 80%;
+  max-height: 100vh;
 }
 
 @media (max-width: 768px) {
@@ -138,4 +140,7 @@
   .text p {
     font-size: 16px;
   }
+}
+.sliderContainer {
+  height: 300px;
 }

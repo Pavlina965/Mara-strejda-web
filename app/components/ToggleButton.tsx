@@ -4,7 +4,15 @@ import { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import StandardImageList from "./Pictures";
+import StandardImageList from "./ImageList";
+
+type ToggleButtonProps = {
+  alignment: string;
+  onToggle: (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    newAlignment: string
+  ) => void;
+};
 
 const theme = createTheme({
   components: {
@@ -28,31 +36,33 @@ const theme = createTheme({
     },
   },
 });
-export default function ToggleButtons() {
-  const [alignment, setAlignment] = useState<string | null>("Kuchyně");
-
-  const handleAlignment = (
-    event: React.MouseEvent<HTMLElement>,
-    newAlignment: string | null
+export default function ToggleButtons({
+  alignment,
+  onToggle,
+}: ToggleButtonProps) {
+  const handleToggle = (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    newAlignment: string
   ) => {
-    setAlignment(newAlignment);
+    if (newAlignment !== null) {
+      onToggle(event, newAlignment);
+    }
   };
-
   return (
     <ThemeProvider theme={theme}>
       <ToggleButtonGroup
         value={alignment}
         exclusive
-        onChange={handleAlignment}
+        onChange={handleToggle}
         aria-label="Místnost"
-        defaultValue={"Kuchyně"}
+        defaultValue={"Kuchyne"}
       >
-        <ToggleButton value="Kuchyně">Kuchyně</ToggleButton>
+        <ToggleButton value="Kuchyne">Kuchyně</ToggleButton>
         <ToggleButton value="Pokoje">Pokoje</ToggleButton>
         <ToggleButton value="Koupelny">Koupelny</ToggleButton>
-        <ToggleButton value="Předsíně">Předsíně</ToggleButton>
+        <ToggleButton value="Predsine">Předsíně</ToggleButton>
       </ToggleButtonGroup>
-      {alignment === "Kuchyně" && <StandardImageList />}
+      {/* {alignment === "Kuchyně" && <StandardImageList />} */}
       {/* {alignment === "Pokoje" && <StandardImageList alignment={alignment} />}
       {alignment === "Koupelny" && <StandardImageList alignment={alignment} />}
       {alignment === "Předsíně" && <StandardImageList alignment={alignment} />} */}

@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Navbar";
 import StickyFooter from "./components/StickyFooter";
 import ThemeRegistry from "./components/ThemeRegistry";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 
 export const metadata = {

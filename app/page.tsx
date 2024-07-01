@@ -1,10 +1,22 @@
+"use client";
 import React from "react";
 import Head from "next/head";
 import styles from "./page.module.css";
 import ToggleButtons from "./components/ToggleButton";
-import StandardImageList from "./components/Pictures";
+import StandardImageList from "./components/ImageList";
 import Navbar from "./components/Navbar";
+import { useState } from "react";
+import SimpleSlider from "./components/ImageList";
+import Slider from "react-slick";
+
 export default function Home() {
+  const [alignment, setAlignment] = useState<string>("Kuchyne");
+  const handleToggle = (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    newAlignment: string
+  ) => {
+    setAlignment(newAlignment);
+  };
   return (
     <>
       <section className={styles.main}>
@@ -59,7 +71,8 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.images}>
-        <ToggleButtons />
+        <ToggleButtons alignment={alignment} onToggle={handleToggle} />
+        <StandardImageList alignment={alignment} />
       </section>
     </>
   );
