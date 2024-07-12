@@ -45,8 +45,8 @@ const Navbar: React.FC = () => {
 
   const menuItems = [
     { text: "Domů", href: "/" },
-    { text: "O nás", href: "/about" },
-    { text: "Služby", href: "/services" },
+    { text: "Služby", href: "#Services" },
+    { text: "O nás", href: "#About" },
     { text: "Kontakt", href: "/contact" },
   ];
 

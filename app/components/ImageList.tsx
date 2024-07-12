@@ -5,10 +5,10 @@ import ImageListItem from "@mui/material/ImageListItem";
 import style from "./ImageList.module.css";
 
 interface itemData {
-  Kuchyne: string[];
-  Pokoje: string[];
-  Koupelny: string[];
-  Predsine: string[];
+  Kitchens: string[];
+  Rooms: string[];
+  Bathrooms: string[];
+  Halls: string[];
   [key: string]: string[];
 }
 
@@ -37,26 +37,26 @@ const StandardImageList = ({ alignment }: StandartImageListProps) => {
 export default StandardImageList;
 
 const itemData = {
-  Kuchyne: [
+  Kitchens: [
     "https://img42.rajce.idnes.cz/d4203/18/18899/18899977_bac9d1fb52fc4b9e4d04d0b80a51d063/images/1624526348?ver=0",
     "https://img42.rajce.idnes.cz/d4203/18/18899/18899977_bac9d1fb52fc4b9e4d04d0b80a51d063/thumb/20240213_112538580_iOS.jpg",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1589966584",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1577290975",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1587420255",
   ],
-  Pokoje: [
+  Rooms: [
     "https://img42.rajce.idnes.cz/d4203/18/18899/18899977_bac9d1fb52fc4b9e4d04d0b80a51d063/thumb/20240213_112538580_iOS.jpg",
     "https://img42.rajce.idnes.cz/d4203/18/18899/18899977_bac9d1fb52fc4b9e4d04d0b80a51d063/thumb/1635379692",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1578820042",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1586587992",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1585116425",
   ],
-  Koupelny: [
+  Bathrooms: [
     "https://img42.rajce.idnes.cz/d4203/18/18899/18899977_bac9d1fb52fc4b9e4d04d0b80a51d063/thumb/1630625115",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1578188237",
     "https://img29.rajce.idnes.cz/d2903/17/17668/17668500_529bf2f821c6aa7025502a3b9e376475/thumb/1560121487",
   ],
-  Predsine: [
+  Halls: [
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1578027093",
     "https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/thumb/1581593556",
     "https://img29.rajce.idnes.cz/d2903/17/17668/17668500_529bf2f821c6aa7025502a3b9e376475/thumb/1570453141?ver=4",

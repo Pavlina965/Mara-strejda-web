@@ -54,13 +54,13 @@ export default function ToggleButtons({
         value={alignment}
         exclusive
         onChange={handleToggle}
-        aria-label="Místnost"
-        defaultValue={"Kuchyne"}
+        aria-label="Room"
+        defaultValue={"Kitchens"}
       >
-        <ToggleButton value="Kuchyne">Kuchyně</ToggleButton>
-        <ToggleButton value="Pokoje">Pokoje</ToggleButton>
-        <ToggleButton value="Koupelny">Koupelny</ToggleButton>
-        <ToggleButton value="Predsine">Předsíně</ToggleButton>
+        <ToggleButton value="Kitchens">Kuchyně</ToggleButton>
+        <ToggleButton value="Rooms">Pokoje</ToggleButton>
+        <ToggleButton value="Bathrooms">Koupelny</ToggleButton>
+        <ToggleButton value="Halls">Předsíně</ToggleButton>
       </ToggleButtonGroup>
       {/* {alignment === "Kuchyně" && <StandardImageList />} */}
       {/* {alignment === "Pokoje" && <StandardImageList alignment={alignment} />}

@@ -10,7 +10,7 @@ import SimpleSlider from "./components/ImageList";
 import Slider from "react-slick";
 
 export default function Home() {
-  const [alignment, setAlignment] = useState<string>("Kuchyne");
+  const [alignment, setAlignment] = useState<string>("Kitchens");
   const handleToggle = (
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     newAlignment: string
@@ -28,7 +28,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className={styles.about}>
+        <div className={styles.about} id="Services">
           <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"></img>
           <div className={styles.container}>
             <div className={styles.aboutText}>
@@ -49,7 +49,7 @@ export default function Home() {
           <div className={styles.icon}></div>
         </div>
 
-        <div className={styles.about}>
+        <div className={styles.about} id="About">
           <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"></img>
           <div className={styles.container}>
             <div className={styles.aboutText}>
