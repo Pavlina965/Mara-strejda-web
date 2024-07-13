@@ -36,6 +36,7 @@
   font-size: 20px;
 }
 .images {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +59,9 @@
   .text p {
     font-size: 18px;
   }
+}
+.pageContent {
+  margin-top: 10px;
 }
 .container {
   width: 100%;

@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { NextRouter } from "next/router";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import {
@@ -29,6 +31,9 @@ const theme = createTheme({
 });
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
+  const isHomePage = usePathname() === "/";
+  console.log(isHomePage);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleDrawer =
@@ -45,16 +50,16 @@ const Navbar: React.FC = () => {
 
   const menuItems = [
     { text: "Domů", href: "/" },
-    { text: "Služby", href: "#Services" },
-    { text: "O nás", href: "#About" },
+    { text: "Služby", href: isHomePage ? "#Services" : "/#Services" },
+    { text: "O nás", href: isHomePage ? "#About" : "/#About" },
     { text: "Kontakt", href: "/contact" },
   ];
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div className={isHomePage ? styles.fixed : ""}>
         <AppBar
-          position="static"
+          position={isHomePage ? "fixed" : "static"}
           sx={{ backgroundColor: theme.palette.primary.main }}
         >
           <Toolbar>

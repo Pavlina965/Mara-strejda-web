@@ -27,7 +27,7 @@ export default function Home() {
           </span>
         </div>
       </section>
-      <section>
+      <section className={styles.pageContent}>
         <div className={styles.about} id="Services">
           <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"></img>
           <div className={styles.container}>
@@ -42,14 +42,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.icons}>
+        <div id="About" className={styles.icons}>
           <div className={styles.icon}></div>
           <div className={styles.icon}></div>
           <div className={styles.icon}></div>
           <div className={styles.icon}></div>
         </div>
 
-        <div className={styles.about} id="About">
+        <div className={styles.about}>
           <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"></img>
           <div className={styles.container}>
             <div className={styles.aboutText}>

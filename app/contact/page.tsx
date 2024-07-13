@@ -1,9 +1,10 @@
 import React from "react";
+import ContactForm from "../components/ContactForm";
 
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <>
-      <div>Napište nám</div>
-    </>
+    <main>
+      <ContactForm />
+    </main>
   );
 }
