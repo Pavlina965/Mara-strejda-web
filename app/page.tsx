@@ -27,8 +27,8 @@ export default function Home() {
           </span>
         </div>
       </section>
-      <section className={styles.pageContent}>
-        <div className={styles.about} id="Services">
+      <section id="Services" className={styles.pageContent}>
+        <div className={styles.about}>
           <img src="https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/images/1589966564?ver=0"></img>
           <div className={styles.container}>
             <div className={styles.aboutText}>

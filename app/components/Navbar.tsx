@@ -33,7 +33,6 @@ const theme = createTheme({
 const Navbar: React.FC = () => {
   const router = useRouter();
   const isHomePage = usePathname() === "/";
-  console.log(isHomePage);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleDrawer =

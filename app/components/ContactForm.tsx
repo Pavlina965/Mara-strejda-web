@@ -1,7 +1,7 @@
 "use client";
 import { FC } from "react";
 import { useForm } from "react-hook-form";
-import { sendEmail } from "../api/submit";
+import { sendEmail } from "../utils/sendEmail";
 import {
   Container,
   TextField,
@@ -15,6 +15,8 @@ import {
   outlinedInputClasses,
 } from "@mui/material";
 import styles from "./ContactForm.module.css";
+import { toast } from "react-hot-toast";
+import { Email } from "@mui/icons-material";
 
 export type FormData = {
   name: string;
@@ -91,8 +93,8 @@ const customTheme = (outerTheme: Theme) =>
 const ContactForm: FC = () => {
   const outerTheme = useTheme();
   const { register, handleSubmit } = useForm<FormData>();
-  function onSubmit(data: FormData) {
-    sendEmail(data);
+  function onSubmit(FormData: FormData) {
+    sendEmail(FormData);
   }
   return (
     <Container className={styles.container} maxWidth="sm">
