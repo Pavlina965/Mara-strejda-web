@@ -61,6 +61,7 @@
   margin: 0 5%;
   border: 1px #9a8a78 solid;
   padding: 0;
+  scroll-margin-top: 4rem;
 }
 
 .aboutText {
@@ -111,6 +112,7 @@
 .icon:last-child {
   border-right: 1px #9a8a78 solid;
 }
+
 @media (max-width: 768px) {
   .pageContent {
     margin-top: 0;
@@ -141,6 +143,7 @@
   .about {
     grid-template-columns: auto;
     margin: 0;
+    scroll-margin-top: 0.4rem;
   }
   .aboutText {
     display: inline-block;
