@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
     },
   });
   const mailOptions: Mail.Options = {
-    from: process.env.MY_EMAIL,
-    to: process.env.MY_EMAIL,
+    from: process.env.NEXT_PUBLIC_MY_EMAIL,
+    to: process.env.NEXT_PUBLIC_MY_EMAIL,
     subject: `Hello from ${name}(${email})`,
     text: message,
   };
