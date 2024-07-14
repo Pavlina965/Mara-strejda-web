@@ -1,6 +1,6 @@
 .main {
   height: 100vh;
-  background-image: url(https://img29.rajce.idnes.cz/d2903/17/17668/17668500_529bf2f821c6aa7025502a3b9e376475/images/1556826232?ver=0);
+  background-image: url(https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/images/1589966551?ver=0);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -47,19 +47,6 @@
   max-height: 100vh;
 }
 
-@media (max-width: 768px) {
-  .text {
-    padding: 15%;
-  }
-
-  .text h1 {
-    font-size: 25px;
-  }
-
-  .text p {
-    font-size: 18px;
-  }
-}
 .pageContent {
   margin-top: 10px;
 }
@@ -104,8 +91,10 @@
   text-align: left;
 }
 .about img {
-  border: 1px #9a8a78 solid;
+  border-right: 1px #9a8a78 solid;
   width: 100%;
+  max-height: 550px;
+  min-height: 550px;
 }
 .icons {
   display: grid;
@@ -121,6 +110,29 @@
 }
 .icon:last-child {
   border-right: 1px #9a8a78 solid;
+}
+@media (max-width: 768px) {
+  .pageContent {
+    margin-top: 0;
+  }
+  .text {
+    padding: 15%;
+  }
+
+  .text h1 {
+    font-size: 25px;
+  }
+
+  .text p {
+    font-size: 18px;
+  }
+  .about {
+    border: none;
+  }
+  .about img {
+    border-left: 0;
+    border-right: 0;
+  }
 }
 @media (max-width: 480px) {
   .icons {
@@ -144,7 +156,8 @@
   .text p {
     font-size: 16px;
   }
-}
-.sliderContainer {
-  height: 300px;
+  .about img {
+    width: 100%;
+    min-height: 300px;
+  }
 }

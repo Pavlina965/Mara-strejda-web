@@ -95,7 +95,7 @@ const ContactForm: FC = () => {
     sendEmail(data);
   }
   return (
-    <Container maxWidth="sm">
+    <Container className={styles.container} maxWidth="sm">
       <Box
         className={styles.form}
         onSubmit={handleSubmit(onSubmit)}

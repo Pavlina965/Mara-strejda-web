@@ -29,7 +29,7 @@ export default function Home() {
       </section>
       <section className={styles.pageContent}>
         <div className={styles.about} id="Services">
-          <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"></img>
+          <img src="https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/images/1589966564?ver=0"></img>
           <div className={styles.container}>
             <div className={styles.aboutText}>
               <h1>Služby</h1>
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
 
         <div className={styles.about}>
-          <img src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"></img>
+          <img src="https://img36.rajce.idnes.cz/d3601/18/18275/18275503_6db2af2a0c075fad4b28d35bf0e3d6a4/images/1575268330?ver=0"></img>
           <div className={styles.container}>
             <div className={styles.aboutText}>
               <h1>O nás</h1>
