@@ -15,9 +15,6 @@ import {
   outlinedInputClasses,
 } from "@mui/material";
 import styles from "./ContactForm.module.css";
-import { toast } from "react-hot-toast";
-import { Email } from "@mui/icons-material";
-
 export type FormData = {
   name: string;
   email: string;
@@ -88,6 +85,14 @@ const customTheme = (outerTheme: Theme) =>
           },
         },
       },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            backgroundColor: "#9a8a78",
+            padding: "10px",
+          },
+        },
+      },
     },
   });
 const ContactForm: FC = () => {
@@ -97,53 +102,61 @@ const ContactForm: FC = () => {
     sendEmail(FormData);
   }
   return (
-    <Container className={styles.container} maxWidth="sm">
-      <Box
-        className={styles.form}
-        onSubmit={handleSubmit(onSubmit)}
-        component="form"
-        noValidate
-        autoComplete="off"
+    <>
+      <h1>Napište nám</h1>
+
+      <Container
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          // minHeight: "100vh",
+          mb: 10,
+        }}
+        maxWidth="sm"
       >
-        <Typography className={styles.formTitle}>Napište nám</Typography>
-        <ThemeProvider theme={customTheme(outerTheme)}>
-          <TextField
-            className={styles.formInput}
-            label="Name"
-            variant="outlined"
-            fullWidth
-            required
-            {...register("name", { required: true })}
-          />
-          <TextField
-            className={styles.formInput}
-            label="Email"
-            variant="outlined"
-            type="email"
-            fullWidth
-            required
-            {...register("email", { required: true })}
-          />
-          <TextField
-            className={styles.formInput}
-            label="Message"
-            variant="outlined"
-            multiline
-            rows={4}
-            fullWidth
-            required
-            {...register("message", { required: true })}
-          />
-          <Button
-            className={styles.formButton}
-            variant="contained"
-            type="submit"
-          >
-            Submit
-          </Button>
-        </ThemeProvider>
-      </Box>
-    </Container>
+        <Box
+          className={styles.form}
+          onSubmit={handleSubmit(onSubmit)}
+          component="form"
+          noValidate
+          autoComplete="off"
+        >
+          <ThemeProvider theme={customTheme(outerTheme)}>
+            <TextField
+              className={styles.formInput}
+              label="Jméno"
+              variant="outlined"
+              fullWidth
+              required
+              {...register("name", { required: true })}
+            />
+            <TextField
+              className={styles.formInput}
+              label="Email"
+              variant="outlined"
+              type="email"
+              fullWidth
+              required
+              {...register("email", { required: true })}
+            />
+            <TextField
+              className={styles.formInput}
+              label="Zpráva"
+              variant="outlined"
+              multiline
+              rows={4}
+              fullWidth
+              required
+              {...register("message", { required: true })}
+            />
+            <Button variant="contained" type="submit" color="primary">
+              Poslat zprávu
+            </Button>{" "}
+          </ThemeProvider>
+        </Box>
+      </Container>
+    </>
   );
 };
 export default ContactForm;

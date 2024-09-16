@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import ImageList from "@mui/material/ImageList";
 import Masonry from "@mui/lab/Masonry";
 // import ImageListItem from "@mui/material/ImageListItem";
 import style from "./ImageList.module.css";
-import { Box, Paper, styled } from "@mui/material";
+import { Box, Paper, Skeleton, styled } from "@mui/material";
 import { Height } from "@mui/icons-material";
 
 interface itemData {
@@ -18,6 +18,7 @@ interface itemData {
 interface StandartImageListProps {
   alignment: string;
 }
+
 const StandardImageList = ({ alignment }: StandartImageListProps) => {
   return (
     <Box
@@ -30,15 +31,21 @@ const StandardImageList = ({ alignment }: StandartImageListProps) => {
       <Masonry columns={{ xs: 1, md: 3 }} spacing={{ xs: 0.3, md: 1 }}>
         {itemData[alignment as keyof typeof itemData].map(
           (image: string, index: number) => (
-            <div className={style.divImg} key={index}>
-              <img
-                srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                src={`${image}?w=248&fit=crop&auto=format`}
-                alt={`Category ${alignment} - Image ${index + 1}`}
-                loading="lazy"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
+            <Box className={style.divImg} key={index}>
+              <Suspense
+                fallback={
+                  <Skeleton variant="rectangular" width={210} height={60} />
+                }
+              >
+                <img
+                  srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${image}?w=248&fit=crop&auto=format`}
+                  alt={`Category ${alignment} - Image ${index + 1}`}
+                  loading="lazy"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </Suspense>
+            </Box>
           )
         )}
       </Masonry>

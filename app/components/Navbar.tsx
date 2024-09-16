@@ -31,8 +31,6 @@ const theme = createTheme({
 });
 
 const Navbar: React.FC = () => {
-  const router = useRouter();
-  const isHomePage = usePathname() === "/";
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleDrawer =
@@ -49,18 +47,15 @@ const Navbar: React.FC = () => {
 
   const menuItems = [
     { text: "Domů", href: "/" },
-    { text: "Služby", href: isHomePage ? "#Services" : "/#Services" },
-    { text: "O nás", href: isHomePage ? "#About" : "/#About" },
-    { text: "Kontakt", href: "/contact" },
+    { text: "Služby", href: "#Services" },
+    { text: "O nás", href: "#About" },
+    { text: "Kontakt", href: "#Contact" },
   ];
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={isHomePage ? styles.fixed : ""}>
-        <AppBar
-          position={isHomePage ? "fixed" : "static"}
-          sx={{ backgroundColor: theme.palette.primary.main }}
-        >
+      <div>
+        <AppBar sx={{ backgroundColor: theme.palette.primary.main }}>
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Logo

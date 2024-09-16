@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
-import Head from "next/head";
+import React, { Suspense } from "react";
 import styles from "./page.module.css";
 import ToggleButtons from "./components/ToggleButton";
 import StandardImageList from "./components/ImageList";
-import Navbar from "./components/Navbar";
 import { useState } from "react";
-import SimpleSlider from "./components/ImageList";
-import Slider from "react-slick";
+import ContactForm from "./components/ContactForm";
+import MapLocation from "./contact/location";
+import ContactCard from "./contact/ContactCard";
 
 export default function Home() {
   const [alignment, setAlignment] = useState<string>("Kitchens");
@@ -72,6 +71,20 @@ export default function Home() {
       <section className={styles.images}>
         <ToggleButtons alignment={alignment} onToggle={handleToggle} />
         <StandardImageList alignment={alignment} />
+      </section>
+      <section className={styles.contact}>
+        <div>
+          <div style={{ marginBottom: "10px" }}>
+            <ContactCard />
+          </div>
+          <div style={{ marginBottom: "10px" }} className={styles.contact}>
+            <h1>Kde nás najdete</h1>
+            <MapLocation />
+          </div>
+          <div id="Contact" className={styles.contact}>
+            <ContactForm />
+          </div>
+        </div>
       </section>
     </>
   );
