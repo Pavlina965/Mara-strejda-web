@@ -13,6 +13,7 @@
 .formInput {
   background-color: #333;
   border-radius: 4px;
+  margin-bottom: 10px;
 }
 .formInput input,
 .formInput textarea {

@@ -13,6 +13,9 @@ import {
   useTheme,
   createTheme,
   outlinedInputClasses,
+  FormControl,
+  InputLabel,
+  Input,
 } from "@mui/material";
 import styles from "./ContactForm.module.css";
 export type FormData = {
@@ -26,7 +29,7 @@ const customTheme = (outerTheme: Theme) =>
       mode: outerTheme.palette.mode,
     },
     components: {
-      MuiTextField: {
+      MuiFormControl: {
         styleOverrides: {
           root: {
             "--TextField-brandBorderColor": "#9a8a78",
@@ -90,6 +93,9 @@ const customTheme = (outerTheme: Theme) =>
           root: {
             backgroundColor: "#9a8a78",
             padding: "10px",
+            "&:hover": {
+              backgroundColor: "#b09c88",
+            },
           },
         },
       },
@@ -97,7 +103,11 @@ const customTheme = (outerTheme: Theme) =>
   });
 const ContactForm: FC = () => {
   const outerTheme = useTheme();
-  const { register, handleSubmit } = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
   function onSubmit(FormData: FormData) {
     sendEmail(FormData);
   }
@@ -110,7 +120,6 @@ const ContactForm: FC = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          // minHeight: "100vh",
           mb: 10,
         }}
         maxWidth="sm"
@@ -123,36 +132,47 @@ const ContactForm: FC = () => {
           autoComplete="off"
         >
           <ThemeProvider theme={customTheme(outerTheme)}>
-            <TextField
-              className={styles.formInput}
-              label="Jméno"
-              variant="outlined"
-              fullWidth
-              required
-              {...register("name", { required: true })}
-            />
-            <TextField
-              className={styles.formInput}
-              label="Email"
-              variant="outlined"
-              type="email"
-              fullWidth
-              required
-              {...register("email", { required: true })}
-            />
-            <TextField
-              className={styles.formInput}
-              label="Zpráva"
-              variant="outlined"
-              multiline
-              rows={4}
-              fullWidth
-              required
-              {...register("message", { required: true })}
-            />
-            <Button variant="contained" type="submit" color="primary">
+            <FormControl variant="outlined" fullWidth>
+              <TextField
+                className={styles.formInput}
+                label="Jméno"
+                variant="outlined"
+                fullWidth
+                required
+                error={!!errors.name}
+                helperText={errors.name?.message}
+                {...register("name", { required: "Prosím zadejte jméno" })}
+              ></TextField>
+              <TextField
+                className={styles.formInput}
+                label="Email"
+                variant="outlined"
+                type="email"
+                fullWidth
+                required
+                error={!!errors.email?.message}
+                {...register("email", {
+                  required: "Prosím zadejte vaší emailovou adresu",
+                  pattern: {
+                    value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                    message: "Prosím, zadejte platný email",
+                  },
+                })}
+              />
+              <TextField
+                className={styles.formInput}
+                label="Zpráva"
+                variant="outlined"
+                multiline
+                rows={4}
+                fullWidth
+                required
+                {...register("message", { required: true })}
+              />
+            </FormControl>
+            <Button variant="contained" type="submit">
               Poslat zprávu
-            </Button>{" "}
+            </Button>
           </ThemeProvider>
         </Box>
       </Container>

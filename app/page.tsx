@@ -73,16 +73,16 @@ export default function Home() {
         <StandardImageList alignment={alignment} />
       </section>
       <section className={styles.contact}>
-        <div>
-          <div style={{ marginBottom: "10px" }}>
+        <div id="Contact">
+          <div className={styles.contact}>
+            <ContactForm />
+          </div>
+          <div>
             <ContactCard />
           </div>
           <div style={{ marginBottom: "10px" }} className={styles.contact}>
             <h1>Kde nás najdete</h1>
             <MapLocation />
-          </div>
-          <div id="Contact" className={styles.contact}>
-            <ContactForm />
           </div>
         </div>
       </section>
