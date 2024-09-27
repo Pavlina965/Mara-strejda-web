@@ -27,7 +27,9 @@
   font-size: 20px;
 }
 .images {
+  width: 100%;
   margin-top: 10px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +42,7 @@
 
 .pageContent {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .container {
   width: 100%;
@@ -47,18 +50,23 @@
   display: flex;
 }
 .about {
+  width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
-  margin: 0 5%;
+  margin: 0;
   border: 1px #9a8a78 solid;
   padding: 0;
   scroll-margin-top: 4rem;
+  background-color: #9a8a78;
+  /* background-color: #fff; */
 }
 
 .aboutText {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
 }
 .aboutText ul {
   /* margin: auto; */
@@ -85,20 +93,21 @@
 .about img {
   border-right: 1px #9a8a78 solid;
   width: 100%;
-  max-height: 550px;
-  min-height: 550px;
+  /* max-height: 550px; */
+  min-height: 570px;
 }
 .icons {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 0;
   margin: 0 5%;
   padding: 0;
 }
 .icon {
-  padding: 45%;
+  padding: 40%;
   border-top: 0px;
   border-left: 1px #9a8a78 solid;
+  color: #333;
 }
 .icon:last-child {
   border-right: 1px #9a8a78 solid;
@@ -160,4 +169,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 5px;
+}
+.linkText {
+  padding: 5px;
+}
+.linkText,
+.linkText a {
+  display: flex;
+  text-decoration: none;
+}
+.linkText a:hover {
+  color: #9a8a78;
+}
+.box {
+  height: 200px;
+  width: 300px;
+  background-color: #f6f6f6;
+  padding: 5px;
+}
+.gridContainer {
+  width: 80%;
+  margin: 10px auto;
 }

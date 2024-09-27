@@ -1,10 +1,8 @@
 "use client";
 import * as React from "react";
-import { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import StandardImageList from "./ImageList";
 
 type ToggleButtonProps = {
   alignment: string;
@@ -19,17 +17,22 @@ const theme = createTheme({
     MuiToggleButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#262626", // Primary main color
-          color: "white",
+          // backgroundColor: "#9a8a78",
+          backgroundColor: "#f6f6f6",
+          color: "#333",
+          border: "none",
           "&.Mui-selected": {
-            backgroundColor: "#9a8a78", // Secondary main color
+            backgroundColor: "#C0A98B",
             color: "white",
+            border: "none",
           },
           "&:hover": {
-            backgroundColor: "#9a8a7880 ", // Primary dark color
+            backgroundColor: "#9a8a7880 ",
+            border: "none",
           },
           "&.Mui-selected:hover": {
-            backgroundColor: "#9a8a78", // Secondary dark color
+            backgroundColor: "#C0A98B",
+            border: "none",
           },
         },
       },
@@ -56,6 +59,7 @@ export default function ToggleButtons({
         onChange={handleToggle}
         aria-label="Room"
         defaultValue={"Kitchens"}
+        sx={{ marginBottom: "20px" }}
       >
         <ToggleButton value="Kitchens">Kuchyně</ToggleButton>
         <ToggleButton value="Rooms">Pokoje</ToggleButton>

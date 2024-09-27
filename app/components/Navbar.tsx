@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import { NextRouter } from "next/router";
-import Link from "next/link";
 import styles from "./Navbar.module.css";
 import {
   AppBar,
@@ -22,10 +19,11 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#333", // Custom primary color
+      // main: "#9a8a78",
+      main: "#f3f3f3",
     },
     secondary: {
-      main: "#4caf50", // Custom secondary color
+      main: "#4caf50",
     },
   },
 });
@@ -33,17 +31,9 @@ const theme = createTheme({
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const toggleDrawer =
-    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-      setIsOpen(open);
-    };
+  const toggleDrawer = (open: boolean) => (event: React.MouseEvent) => {
+    setIsOpen(open);
+  };
 
   const menuItems = [
     { text: "Domů", href: "/" },
@@ -97,7 +87,6 @@ const Navbar: React.FC = () => {
             sx={{ width: "100%" }}
             role="presentation"
             onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
           >
             <List>
               {menuItems.map((item) => (

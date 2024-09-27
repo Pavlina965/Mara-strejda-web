@@ -6,15 +6,14 @@ export default function ContactCard() {
       <Grid item xs={6} spacing={2}>
         <Card
           sx={{
-            background: "#555555",
+            background: "#f6f6f6",
             p: 2,
-            borderRadius: 8,
             display: "flex",
             flexDirection: "column",
             height: "100%",
           }}
         >
-          <CardContent sx={{ color: "#e0e0e0", flexGrow: 1 }}>
+          <CardContent sx={{ color: "#333333", flexGrow: 1 }}>
             <Typography variant="h6" component="div">
               Telefon
             </Typography>
@@ -27,15 +26,14 @@ export default function ContactCard() {
       <Grid item xs={6}>
         <Card
           sx={{
-            background: "#555555",
+            background: "#f6f6f6",
             p: 2,
-            borderRadius: 8,
             display: "flex",
             flexDirection: "column",
             height: "100%",
           }}
         >
-          <CardContent sx={{ color: "#e0e0e0", flexGrow: 1 }}>
+          <CardContent sx={{ color: "#333333", flexGrow: 1 }}>
             <Typography variant="h6" component="div">
               Email
             </Typography>
@@ -50,15 +48,14 @@ export default function ContactCard() {
       <Grid item xs={6}>
         <Card
           sx={{
-            background: "#555555",
+            background: "#f6f6f6",
             p: 2,
-            borderRadius: 8,
             display: "flex",
             flexDirection: "column",
             height: "100%",
           }}
         >
-          <CardContent sx={{ color: "#e0e0e0", flexGrow: 1 }}>
+          <CardContent sx={{ color: "#333333", flexGrow: 1 }}>
             <Typography variant="h6" component="div">
               O firmě
             </Typography>
@@ -74,15 +71,14 @@ export default function ContactCard() {
       <Grid item xs={6}>
         <Card
           sx={{
-            background: "#555555",
+            background: "#f6f6f6",
             p: 2,
-            borderRadius: 8,
             display: "flex",
             flexDirection: "column",
             height: "100%",
           }}
         >
-          <CardContent sx={{ color: "#e0e0e0", flexGrow: 1 }}>
+          <CardContent sx={{ color: "#333333", flexGrow: 1 }}>
             <Typography variant="h6" component="div">
               Otevírací doba
             </Typography>

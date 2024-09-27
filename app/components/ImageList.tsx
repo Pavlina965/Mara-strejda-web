@@ -1,11 +1,6 @@
 import React, { Suspense, useEffect, useRef } from "react";
-import Slider from "react-slick";
-import ImageList from "@mui/material/ImageList";
 import Masonry from "@mui/lab/Masonry";
-// import ImageListItem from "@mui/material/ImageListItem";
-import style from "./ImageList.module.css";
 import { Box, Paper, Skeleton, styled } from "@mui/material";
-import { Height } from "@mui/icons-material";
 
 interface itemData {
   Kitchens: string[];
@@ -23,28 +18,30 @@ const StandardImageList = ({ alignment }: StandartImageListProps) => {
   return (
     <Box
       sx={{
-        width: { xs: "auto", sm: 1300 },
-        minHeight: { xs: 200, sm: 500 },
-        mt: 1,
+        width: "80%",
       }}
     >
-      <Masonry columns={{ xs: 1, md: 3 }} spacing={{ xs: 0.3, md: 1 }}>
+      <Masonry
+        columns={{ xs: 1, md: 3 }}
+        spacing={{ xs: 0, md: 2 }}
+        style={{ margin: "0" }}
+      >
         {itemData[alignment as keyof typeof itemData].map(
           (image: string, index: number) => (
-            <Box className={style.divImg} key={index}>
-              <Suspense
-                fallback={
-                  <Skeleton variant="rectangular" width={210} height={60} />
-                }
-              >
-                <img
-                  srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                  src={`${image}?w=248&fit=crop&auto=format`}
-                  alt={`Category ${alignment} - Image ${index + 1}`}
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </Suspense>
+            <Box key={index}>
+              {/* <Suspense fallback={"Loading"}> */}
+              <img
+                src={`${image}?w=248&fit=crop&auto=format`}
+                srcSet={`${image}?w=300&fit=crop&auto=format&dpr=2 2x`}
+                alt={`Category ${alignment} - Image ${index + 1}`}
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                }}
+              />
+              {/* </Suspense> */}
             </Box>
           )
         )}
