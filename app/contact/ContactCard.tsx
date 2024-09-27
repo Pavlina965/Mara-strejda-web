@@ -2,8 +2,8 @@ import { Card, CardContent, Grid, Typography } from "@mui/material";
 import styles from "./ContactCard.module.css";
 export default function ContactCard() {
   return (
-    <Grid container spacing={2} sx={{}}>
-      <Grid item xs={6} spacing={2}>
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6}>
         <Card
           sx={{
             background: "#f6f6f6",
@@ -23,7 +23,7 @@ export default function ContactCard() {
         </Card>
       </Grid>
 
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6}>
         <Card
           sx={{
             background: "#f6f6f6",
@@ -45,7 +45,7 @@ export default function ContactCard() {
         </Card>
       </Grid>
 
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6}>
         <Card
           sx={{
             background: "#f6f6f6",
@@ -68,7 +68,7 @@ export default function ContactCard() {
         </Card>
       </Grid>
 
-      <Grid item xs={6}>
+      <Grid item xs={12} sm={6}>
         <Card
           sx={{
             background: "#f6f6f6",
