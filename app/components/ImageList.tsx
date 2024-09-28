@@ -37,7 +37,7 @@ const StandardImageList = ({ alignment }: StandartImageListProps) => {
                 loading="lazy"
                 style={{
                   width: "100%",
-                  height: "auto",
+                  height: "300px",
                   objectFit: "cover",
                 }}
               />

@@ -105,7 +105,7 @@ export default function Home() {
           </Grid>
         </div>
 
-        <div className={styles.aboutText}>
+        <div id="About" className={styles.aboutText}>
           <h1>O nás</h1>
           <h2>Mikopa</h2>
           <p>
